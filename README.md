@@ -35,24 +35,30 @@ require('telescope').load_extension('gh')
 ```viml
 Telescope gh issues
 Telescope gh pull_request
+Telescope gh pull_request_files
 Telescope gh gist
 Telescope gh run
+Telescope gh secret
 
 "Using lua function
 lua require('telescope').extensions.gh.issues()<cr>
 lua require('telescope').extensions.gh.pull_request()<cr>
+lua require('telescope').extensions.gh.pull_request_files()<cr>
 lua require('telescope').extensions.gh.gist()<cr>
 lua require('telescope').extensions.gh.run()<cr>
-
+lua require('telescope').extensions.gh.secret()<cr>
 ```
 
 ## Options
 
-You can add more filter to issue in commands
+You can add more filters to issue in commands:
 
 ```viml
 " filter with author and label
 Telescope gh issues author=windwp label=bug
+
+" in lua
+lua require('telescope').extensions.gh.issues({ author = "windwp", label = "bug" })
 ```
 
 ### Pull Request
